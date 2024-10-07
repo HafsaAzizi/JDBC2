@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `employe` (
   `prenom` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
-
+```
 #### Création de la table message :
 ```sql
 CREATE TABLE IF NOT EXISTS `message` (
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   PRIMARY KEY (`id`),
   KEY `idE` (`idE`, `idR`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=18;
-
+```
 
 ## Gestion d'une Entreprise 
 
@@ -93,9 +93,10 @@ Créez la base **gestion_employe** :
 CREATE DATABASE IF NOT EXISTS gestion_employe;
 
 ## Tables SQL pour la Gestion des Employés
+``````
 
 -Pour la table developpeurs :
-`sql
+```sql
 CREATE TABLE IF NOT EXISTS developpeurs (
     id int(11) NOT NULL AUTO_INCREMENT,
     nom varchar(50) NOT NULL,
@@ -103,8 +104,7 @@ CREATE TABLE IF NOT EXISTS developpeurs (
     salair double NOT NULL,
     PRIMARY KEY (id)                                  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
-`
-
+```
 -Pour la table manager :
 ``sql
 CREATE TABLE IF NOT EXISTS manager (
@@ -115,9 +115,9 @@ CREATE TABLE IF NOT EXISTS manager (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=5;
 
-
+```
 -Pour la table `directeur` :
-sql
+```sql
 CREATE TABLE IF NOT EXISTS directeur (
     id int(11) NOT NULL AUTO_INCREMENT,
     nom varchar(50) NOT NULL,
@@ -133,10 +133,10 @@ CREATE TABLE IF NOT EXISTS directeur (
     CONSTRAINT fk_directeur_manager_id FOREIGN KEY (idm) REFERENCES manager (id) 
         ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
-
+```
 
 -Pour la table `manager-developpeur` :
-sql
+```sql
 CREATE TABLE IF NOT EXISTS manager_developpeur (
     manager_id INT NOT NULL,
     developpeur_id INT NOT NULL,
